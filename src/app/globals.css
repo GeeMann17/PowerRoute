@@ -1,0 +1,343 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  /* Custom semantic tokens */
+  --color-hero-bg: var(--hero-bg);
+  --color-hero-fg: var(--hero-fg);
+  --color-section-alt: var(--section-alt);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+
+  /* Brutalist tokens */
+  --color-brutal-accent: var(--brutal-accent);
+  --color-brutal-shadow: var(--brutal-shadow);
+  --color-brutal-border: var(--brutal-border);
+}
+
+/* ============================================
+   THEME: LIGHT — Neo-Brutalist Industrial
+   Off-white surfaces, black borders & shadows,
+   electric yellow accent, raw & bold
+   ============================================ */
+:root,
+[data-theme="light"] {
+  --radius: 0px;
+
+  --background: #FAFAF5;
+  --foreground: #000000;
+
+  --card: #FAFAF5;
+  --card-foreground: #000000;
+
+  --popover: #FAFAF5;
+  --popover-foreground: #000000;
+
+  --primary: #000000;
+  --primary-foreground: #FFE600;
+
+  --secondary: #F0F0E8;
+  --secondary-foreground: #000000;
+
+  --muted: #EDEDDE;
+  --muted-foreground: #3D3D3D;
+
+  --accent: #FFE600;
+  --accent-foreground: #000000;
+
+  --destructive: #FF0000;
+
+  --border: #000000;
+  --input: #000000;
+  --ring: #FFE600;
+
+  --success: #00AA00;
+  --warning: #FF8800;
+
+  /* Hero — black background, off-white text */
+  --hero-bg: #000000;
+  --hero-fg: #FAFAF5;
+
+  /* Alternating section background */
+  --section-alt: #F0F0E8;
+
+  /* Brutalist-specific */
+  --brutal-accent: #FFE600;
+  --brutal-shadow: #000000;
+  --brutal-border: #000000;
+
+  /* Chart colors */
+  --chart-1: #000000;
+  --chart-2: #FFE600;
+  --chart-3: #FF0000;
+  --chart-4: #00AA00;
+  --chart-5: #FF8800;
+
+  /* Sidebar */
+  --sidebar: #FAFAF5;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #000000;
+  --sidebar-primary-foreground: #FFE600;
+  --sidebar-accent: #F0F0E8;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #000000;
+  --sidebar-ring: #FFE600;
+}
+
+
+/* ============================================
+   THEME: DARK — Neo-Brutalist Terminal
+   Deep black surfaces, white borders,
+   neon green accent, exposed structure
+   ============================================ */
+[data-theme="dark"] {
+  --radius: 0px;
+
+  --background: #0A0A0A;
+  --foreground: #F0F0E8;
+
+  --card: #141414;
+  --card-foreground: #F0F0E8;
+
+  --popover: #141414;
+  --popover-foreground: #F0F0E8;
+
+  --primary: #F0F0E8;
+  --primary-foreground: #0A0A0A;
+
+  --secondary: #1E1E1E;
+  --secondary-foreground: #CCCCCC;
+
+  --muted: #1E1E1E;
+  --muted-foreground: #888888;
+
+  --accent: #39FF14;
+  --accent-foreground: #000000;
+
+  --destructive: #FF3333;
+
+  --border: #F0F0E8;
+  --input: #F0F0E8;
+  --ring: #39FF14;
+
+  --success: #39FF14;
+  --warning: #FFE600;
+
+  /* Hero */
+  --hero-bg: #0A0A0A;
+  --hero-fg: #F0F0E8;
+
+  --section-alt: #141414;
+
+  /* Brutalist-specific */
+  --brutal-accent: #39FF14;
+  --brutal-shadow: #39FF14;
+  --brutal-border: #F0F0E8;
+
+  /* Chart colors */
+  --chart-1: #F0F0E8;
+  --chart-2: #39FF14;
+  --chart-3: #FFE600;
+  --chart-4: #00F0FF;
+  --chart-5: #FF3333;
+
+  /* Sidebar */
+  --sidebar: #0A0A0A;
+  --sidebar-foreground: #CCCCCC;
+  --sidebar-primary: #F0F0E8;
+  --sidebar-primary-foreground: #0A0A0A;
+  --sidebar-accent: #1E1E1E;
+  --sidebar-accent-foreground: #F0F0E8;
+  --sidebar-border: #333333;
+  --sidebar-ring: #39FF14;
+}
+
+
+/* ============================================
+   THEME: CORPORATE — Neo-Brutalist Command
+   Navy borders, orange accent,
+   structured but unmistakably brutal
+   ============================================ */
+[data-theme="corporate"] {
+  --radius: 2px;
+
+  --background: #FFFFFF;
+  --foreground: #0A0A2E;
+
+  --card: #FFFFFF;
+  --card-foreground: #0A0A2E;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #0A0A2E;
+
+  --primary: #1A1A2E;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #F0F0F5;
+  --secondary-foreground: #0A0A2E;
+
+  --muted: #F0F0F5;
+  --muted-foreground: #44446A;
+
+  --accent: #FF6B35;
+  --accent-foreground: #FFFFFF;
+
+  --destructive: #CC0000;
+
+  --border: #1A1A2E;
+  --input: #1A1A2E;
+  --ring: #FF6B35;
+
+  --success: #006644;
+  --warning: #CC7700;
+
+  /* Hero — deep navy background, white text */
+  --hero-bg: #1A1A2E;
+  --hero-fg: #FFFFFF;
+
+  --section-alt: #F0F0F5;
+
+  /* Brutalist-specific */
+  --brutal-accent: #FF6B35;
+  --brutal-shadow: #1A1A2E;
+  --brutal-border: #1A1A2E;
+
+  /* Chart colors */
+  --chart-1: #1A1A2E;
+  --chart-2: #FF6B35;
+  --chart-3: #006644;
+  --chart-4: #CC7700;
+  --chart-5: #CC0000;
+
+  /* Sidebar */
+  --sidebar: #1A1A2E;
+  --sidebar-foreground: #E0E0F0;
+  --sidebar-primary: #FF6B35;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #2D2D4E;
+  --sidebar-accent-foreground: #F0F0F5;
+  --sidebar-border: #2D2D4E;
+  --sidebar-ring: #FF6B35;
+}
+
+
+/* ============================================
+   BRUTALIST UTILITY CLASSES
+   ============================================ */
+@layer components {
+  /* Offset shadows */
+  .brutal-shadow {
+    box-shadow: 4px 4px 0px var(--brutal-shadow);
+  }
+  .brutal-shadow-sm {
+    box-shadow: 2px 2px 0px var(--brutal-shadow);
+  }
+  .brutal-shadow-lg {
+    box-shadow: 6px 6px 0px var(--brutal-shadow);
+  }
+  .brutal-shadow-accent {
+    box-shadow: 4px 4px 0px var(--brutal-accent);
+  }
+
+  /* Hover: shift shadow */
+  .brutal-hover {
+    transition: transform 80ms ease-out, box-shadow 80ms ease-out;
+  }
+  .brutal-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--brutal-shadow);
+  }
+  .brutal-hover:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--brutal-shadow);
+  }
+
+  /* Thick borders */
+  .border-brutal {
+    border-width: 2px;
+    border-color: var(--brutal-border);
+  }
+  .border-brutal-3 {
+    border-width: 3px;
+    border-color: var(--brutal-border);
+  }
+
+  /* Accent highlight inline */
+  .brutal-highlight {
+    background-color: var(--brutal-accent);
+    color: var(--accent-foreground);
+    padding: 0.125rem 0.5rem;
+    display: inline;
+  }
+
+  /* Step number */
+  .brutal-step-number {
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid var(--brutal-border);
+    background-color: var(--brutal-accent);
+    color: var(--accent-foreground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-geist-mono);
+    font-weight: 900;
+    font-size: 1.25rem;
+  }
+}
+
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
