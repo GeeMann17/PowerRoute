@@ -125,7 +125,7 @@ const faqs = [
   },
   {
     question: 'What certifications do your providers hold?',
-    answer: 'Every provider in our network maintains current R2, e-Stewards, NAID AAA, and SOC 2 Type II certifications \u2014 verified annually, not just claimed. For government and secure facility work, we match providers with appropriate security clearances and full DOT compliance. We reject roughly 60% of providers who apply to join our network.',
+    answer: 'Every provider is fully insured, DOT compliant, and background-checked. For specialized work — data destruction, secure facilities, clearance-required jobs — we match providers with the specific certifications required (NAID AAA, R2, SOC 2, security clearances). We reject roughly 60% of applicants to maintain network quality.',
   },
   {
     question: 'How is chain of custody guaranteed?',
@@ -147,17 +147,17 @@ const faqs = [
 
 const trustItems = [
   { icon: Lock, text: 'Tamper-evident seals + live GPS on every shipment' },
-  { icon: Award, text: 'R2, NAID AAA, e-Stewards, SOC 2 Type II \u2014 verified annually' },
+  { icon: Award, text: 'Every provider vetted, insured, and certified for the job' },
   { icon: Eye, text: 'Every laborer background-checked with valid government ID' },
   { icon: Zap, text: 'Shock pallets, climate-controlled trucks, zero forklift contact' },
 ]
 
 const certs = [
-  { cert: 'R2 / e-Stewards', desc: 'Responsible recycling and electronics management' },
-  { cert: 'NAID AAA', desc: 'National Association for Information Destruction' },
-  { cert: 'SOC 2 Type II', desc: 'Third-party verified security and operational controls' },
-  { cert: 'NIST 800-88', desc: 'Media sanitization guidelines compliance' },
-  { cert: 'DOT Compliant', desc: 'Department of Transportation registered and insured' },
+  { cert: 'Fully Insured', desc: 'Cargo, liability, and workers comp coverage verified' },
+  { cert: 'Background Checked', desc: 'Every crew member screened and ID-verified' },
+  { cert: 'DOT Compliant', desc: 'Department of Transportation registered carriers' },
+  { cert: 'Chain of Custody', desc: 'Serial-level tracking from pickup to delivery' },
+  { cert: 'Industry Certified', desc: 'Specialized certifications for ITAD, data centers, and secure facilities' },
 ]
 
 // ============================================================
@@ -196,7 +196,7 @@ export default function HomePage() {
                 </span>
                 <span className="flex items-center gap-2 text-sm text-hero-fg/60">
                   <CheckCircle className="h-3.5 w-3.5 text-accent flex-shrink-0" />
-                  Every provider R2 &amp; NAID AAA certified
+                  Every provider vetted, insured &amp; background-checked
                 </span>
                 <span className="flex items-center gap-2 text-sm text-hero-fg/60">
                   <CheckCircle className="h-3.5 w-3.5 text-accent flex-shrink-0" />
@@ -395,7 +395,7 @@ export default function HomePage() {
             <div className="space-y-4">
               <div className="bg-card border-2 border-border brutal-shadow p-6">
                 <h3 className="text-base font-black text-card-foreground uppercase font-mono mb-5 border-b-2 border-border pb-3">
-                  Network Standards
+                  Provider Requirements
                 </h3>
                 <div className="space-y-0">
                   {certs.map((item, i) => (
